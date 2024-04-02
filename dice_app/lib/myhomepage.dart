@@ -10,10 +10,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  // Random Бул капыстан келуучу результат
   Random random = Random();
  int firstDice1 = 1;
   int secondtDice2 = 5;
 
+// Void Activing Бул функцияны кыскартат
   void activing() {
     setState(() {
       firstDice1 = random.nextInt(6) + 1;
@@ -23,16 +25,18 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    // Scafold Бул проекттинин актай баракчасы
     return Scaffold(
+      // backgroundColor бул AppBar
       backgroundColor: Colors.yellow,
       appBar: AppBar(
         backgroundColor: Colors.deepOrange,
         title: const Center(child: Text('Тапшырма 5')),
       ),
       body: Center(
+        // Column Бул ойдодолн ылдый ортолотуп берет
         child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             if (firstDice1 == 6 && secondtDice2 == 6) 
             const Text('Super',
@@ -40,13 +44,15 @@ class _MyHomePageState extends State<MyHomePage> {
               fontSize: 20,fontWeight: 
               FontWeight.w600),
               ),
-            
             Center(
+              // Pading Бул торт капталдан кызып берет
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: (Row(
+                child: (
+                  // Row Бул сол капталдан он капталга ортолотуп берет
+                  Row(
                   children: [
-                    
+                    // Expandent Бул контейнердин бир туру
                     Expanded(
                       child: Image.asset(
                         'assets/image/dice$firstDice1.png',
@@ -59,7 +65,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                 )),
               ),
-            ),SizedBox(height: 20,),
+            ),
+            const SizedBox(height: 20,),
             ElevatedButton.icon(
               onPressed: () {
                 activing();
