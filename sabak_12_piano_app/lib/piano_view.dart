@@ -5,6 +5,7 @@ class PianoView extends StatelessWidget {
  
    PianoView({super.key});
   final player = AudioPlayer();
+  
   @override
   Widget build(BuildContext context) {
   
@@ -25,6 +26,7 @@ class PianoView extends StatelessWidget {
       'f6',
       'f7'
     ];
+    
     final List<String> notes =[
        'notes1',
       'notes2',
@@ -41,6 +43,8 @@ class PianoView extends StatelessWidget {
       'notes2',
       'notes1'
     ];
+    
+    
     return  Scaffold(
 appBar: myAppbar(),
 body: Column(
@@ -50,22 +54,28 @@ body: Column(
       ),
   Expanded(
     flex: 4,
+    // Stack бул виджетти колдонуп контейнердин устуно дагы бир контейнер койсо болот,жана позиясын озгортсо болот
     child: Stack(
       children: [
+        //Listwiev Бул виджет вертикально же горизантально озубуз канча контейнер кааласак ощончо тусконго жарадам берет
         ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: 14,
         itemBuilder: (context,index){
         return InkWell(
+          // SplashColor Бул виджет контейнерди басканда тус берет
+          splashColor: const Color.fromARGB(255, 254, 183, 60),
           onTap: () async{
            await player.play(
             AssetSource('${notes[index]}.mp3'));
             
           },
           child: Container(
+            // margin бул декорациянын же контейнерлердин ортосундагы боштонтукту кылса болот
             margin: const EdgeInsets.all(2),
                 width: 50,
                 height: 200,
+               
                 decoration: BoxDecoration(
                 color: Colors.grey.withOpacity(0.3),
                 borderRadius: BorderRadius.circular(5),
@@ -87,13 +97,17 @@ body: Column(
         );
         }
        ),
+       // Positioned Бул контейнерди ар тарапка жылдырганы жардам берет
         Positioned(
           left: 34,
+          // inkWell бул виджет контейнерди торт тараптан кысып берет
           child:InkWell(
+            
             onTap: () {
               player.play(AssetSource('notes2.mp3'));
             },
             child: Container(
+              
               width: 40,
               height: 120,
               decoration: const BoxDecoration(

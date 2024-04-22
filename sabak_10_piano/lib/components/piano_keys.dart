@@ -8,11 +8,12 @@ class Pianokeys extends StatelessWidget{
   final Color color;
   final String text;
   final void Function() onTap;
+  
   @override
   Widget build(BuildContext context) {
     
    return  InkWell(
-          onTap: () {},
+          onTap: onTap,
           child: Container(
             color: color,
             width: MediaQuery.of(context).size.width,

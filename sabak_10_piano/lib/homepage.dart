@@ -28,10 +28,9 @@ class _HulophoneViewState extends State<HulophoneView> {
        Pianokeys(
         color: Colors.blue, 
         text: 'Do',
-         onTap: () { 
-          audioplayers.play(AssetSource('nota1.mp3'));
-          print('on tap ishtedi');
-          }),
+         onTap: (){
+          audioplayers.play(AssetSource('nota1.mp3'),);
+         }),
 
         Pianokeys(
         color: Colors.green, 

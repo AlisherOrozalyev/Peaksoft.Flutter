@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(      
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -35,12 +36,14 @@ class _MyHomePageState extends State<MyHomePage> {
       backgroundColor: Colors.blueAccent,
       appBar: AppBar(
         backgroundColor: Colors.grey
-        ,title: const Text(
-          "Counter App",
-      style: TextStyle(
-        color: Colors.green,
-        fontSize: 50.2
-        ),
+        ,title: const Center(
+          child: Text(
+            "Counter App",
+                style: TextStyle(
+          color: Color.fromARGB(255, 233, 24, 24),
+          fontSize: 50.2
+          ),
+          ),
         ) ),
       body: Center(
         child: Column(
