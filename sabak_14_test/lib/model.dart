@@ -8,3 +8,5 @@ Test f2 = Test(suroo: 'Кыргызстанда 7 млн калк баарбы?'
 Test f3 = Test(suroo: 'Крокодил учабы?', joop: false);
 Test f4 = Test(suroo: 'Алмата Казахстандабы?', joop: true);
 Test f5 = Test(suroo: 'Атамбаев президентпи?', joop: false);
+
+List <Test> textList = [f1,f2,f3,f4,f5];
