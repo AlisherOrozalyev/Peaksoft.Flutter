@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:sabak_15_bmi_colculator/features/presentation/widgets/height_card.dart';
 import 'package:sabak_15_bmi_colculator/features/presentation/widgets/male_female_card.dart';
+import 'package:sabak_15_bmi_colculator/features/presentation/widgets/weight_age_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -14,25 +16,43 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: myAppBar(),
-      body: const Column(
-        children: [
-          Row(
-            children: [
-              MaleFemaleCard(),
-              MaleFemaleCard(),
-            ],
-          ),
-          HeightCard(),
+      body: const Padding(
+        padding:EdgeInsets.symmetric(horizontal: 20),
+        
+        child:  Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
             Row(
-            children: [
-              MaleFemaleCard(),
-              MaleFemaleCard(),
-            ],
-          ),
-        ],
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                MaleFemaleCard(),
+                MaleFemaleCard(),
+              ],
+            ),
+            HeightCard(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                WightAge(),
+                 WightAge(),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
