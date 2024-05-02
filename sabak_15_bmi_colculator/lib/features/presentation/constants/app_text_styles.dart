@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class AppTeaxtStyle {
+class AppTextStyles {
   static const bodyStyle = TextStyle(
       color: Color(0xffCECCD2), 
       fontSize: 18, 

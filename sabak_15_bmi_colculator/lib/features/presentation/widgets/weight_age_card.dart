@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:sabak_15_bmi_colculator/features/presentation/constants/app_text_styles.dart';
 
-class WightAge extends StatelessWidget {
-  const WightAge({
-    super.key,
+class WightAgeCard extends StatelessWidget {
+  const WightAgeCard({
+    super.key, required this.text, this.koshuu, this.kemituu,
   });
+
+final String text;
+final void Function()? koshuu;
+final void Function()? kemituu;
 
   @override
   Widget build(BuildContext context) {
@@ -18,25 +22,31 @@ class WightAge extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Text(
-              'weight'.toUpperCase(),
-              style: AppTeaxtStyle.bodyStyle,
+              text.toUpperCase(),
+              style: AppTextStyles.bodyStyle,
             ),
             const Text(
               '60',
-              style: AppTeaxtStyle.numStyle,
+              style: AppTextStyles.numStyle,
             ),
-            const Row(
+             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Icon(
-                  Icons.remove_circle,
-                  color: Color(0xff5C5858),
-                  size: 45,
+                IconButton(
+                  onPressed: kemituu,
+                  icon: const Icon(
+                    Icons.remove_circle,
+                    color: Color(0xff5C5858),
+                    size: 45,
+                  ),
                 ),
-                Icon(
-                  Icons.add_circle,
-                  color: Color(0xff5C5858),
-                  size: 45,
+                IconButton(
+                  onPressed: koshuu,
+                  icon: const Icon(
+                    Icons.add_circle,
+                    color: Color(0xff5C5858),
+                    size: 45,
+                  ),
                 )
               ],
             )

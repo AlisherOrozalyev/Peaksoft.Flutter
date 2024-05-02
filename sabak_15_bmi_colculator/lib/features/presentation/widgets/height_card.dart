@@ -10,17 +10,17 @@ class HeightCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 350,
+      width: MediaQuery.of(context).size.width,
       height: 176,
       child: Card(
         shadowColor: Colors.white,
         color: const Color(0xff0b0120),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
               'Height'.toUpperCase(),
-              style: AppTeaxtStyle.bodyStyle,
+              style: AppTextStyles.bodyStyle,
             ),
             const Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -29,11 +29,11 @@ class HeightCard extends StatelessWidget {
               children: [
                 Text(
                   '180',
-                  style: AppTeaxtStyle.numStyle,
+                  style: AppTextStyles.numStyle,
                 ),
                  Text(
               'cm',
-              style: AppTeaxtStyle.titleStyle,
+              style: AppTextStyles.titleStyle,
             ),
               ],
             ),
