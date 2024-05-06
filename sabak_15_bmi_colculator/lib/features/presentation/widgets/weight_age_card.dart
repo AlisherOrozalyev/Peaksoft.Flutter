@@ -3,12 +3,13 @@ import 'package:sabak_15_bmi_colculator/features/presentation/constants/app_text
 
 class WightAgeCard extends StatelessWidget {
   const WightAgeCard({
-    super.key, required this.text, this.koshuu, this.kemituu,
+    super.key, required this.text, this.koshuu, this.kemituu, required this.text1,
   });
 
 final String text;
 final void Function()? koshuu;
 final void Function()? kemituu;
+final String text1;
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +26,8 @@ final void Function()? kemituu;
               text.toUpperCase(),
               style: AppTextStyles.bodyStyle,
             ),
-            const Text(
-              '60',
+             Text(
+              text1,
               style: AppTextStyles.numStyle,
             ),
              Row(
@@ -36,7 +37,7 @@ final void Function()? kemituu;
                   onPressed: kemituu,
                   icon: const Icon(
                     Icons.remove_circle,
-                    color: Color(0xff5C5858),
+                    color: Color(0xffffffff),
                     size: 45,
                   ),
                 ),
@@ -44,7 +45,7 @@ final void Function()? kemituu;
                   onPressed: koshuu,
                   icon: const Icon(
                     Icons.add_circle,
-                    color: Color(0xff5C5858),
+                    color: Color(0xffffffff),
                     size: 45,
                   ),
                 )

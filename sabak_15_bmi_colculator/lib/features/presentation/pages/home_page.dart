@@ -12,11 +12,22 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int height = 180;
+  int weight = 60;
+  int age = 25;
+  bool isMale = false;
+
+  void maleFemaleFun(){
+    setState(() {
+      isMale = !isMale;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: myAppBar(),
-      body:  Padding(
+      body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -24,44 +35,42 @@ class _HomePageState extends State<HomePage> {
             const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                MaleFemaleCard(text: 'male', icon: Icons.male,),
-                MaleFemaleCard(text: 'female', icon: Icons.female,),
+                MaleFemaleCard(
+                  text: 'male',
+                  icon: Icons.male,
+                ),
+                MaleFemaleCard(
+                  text: 'female',
+                  icon: Icons.female,
+                ),
               ],
             ),
-            const HeightCard(),
+            HeightCard(
+              text: height.toString(),
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-
-              WightAgeCard(text: 'weight',
-                kemituu: (){},
-                koshuu: (){}),
-                
-              WightAgeCard(text: 'weight',
-                kemituu: (){},
-                koshuu: (){}),
-                
-
+                WightAgeCard(
+                  text: 'weight',
+                  kemituu: () {},
+                  koshuu: () {},
+                  text1: weight.toString(),
+                ),
+                WightAgeCard(
+                  text: 'age',
+                  kemituu: () {},
+                  koshuu: () {},
+                  text1: age.toString(),
+                ),
               ],
             ),
-            
           ],
         ),
       ),
       bottomNavigationBar: const CalculateButton(),
     );
   }
-
-
-
-
-
-
-
-
-
-
-
 
   AppBar myAppBar() {
     return AppBar(
