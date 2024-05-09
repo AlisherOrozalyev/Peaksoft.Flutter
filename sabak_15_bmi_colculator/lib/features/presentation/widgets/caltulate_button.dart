@@ -19,19 +19,26 @@ class CalculateButton extends StatelessWidget {
                   padding: const EdgeInsets.all(20),
                   child: Column(
                     children: [
-                      const Row(
-                        children: [
-                          Icon(
-                            Icons.arrow_back_ios,
-                            color: Colors.white,
-                            size: 32,
-                          ),
-                          SizedBox(
-                            width: 15,
-                          ),
-                          Text('Ден-соолук индекси(BMI)',
-                              style: AppTextStyles.heightStyle),
-                        ],
+                      const Card(
+                        color: Colors.blueGrey,
+                        child: Column(
+                          children: [
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.arrow_back_ios_new_rounded,
+                                  color: Colors.white,
+                                  size: 28,
+                                ),
+                                SizedBox(
+                                  width: 15,
+                                ),
+                                Text('Ден-соолук индекси(BMI)',
+                                    style: AppTextStyles.heightStyle),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                       const SizedBox(
                         height: 20,
@@ -80,14 +87,15 @@ class CalculateButton extends StatelessWidget {
                                       fontSize: 12,
                                       fontWeight: FontWeight.w500),
                                 ),
+                                CircularProgressIndicator.adaptive(),
                                 SizedBox(
                                   height: 3.4,
                                 ),
                               ],
                             ),
-                          ), 
+                          ),
                           const SizedBox(
-                            height: 15,
+                            height: 6,
                           ),
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
