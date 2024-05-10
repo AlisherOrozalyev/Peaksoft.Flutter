@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sabak_15_bmi_colculator/features/presentation/constants/app_text_styles.dart';
+import 'package:sabak_15_bmi_colculator/features/presentation/pages/home_page.dart';
 
 class CalculateButton extends StatelessWidget {
   const CalculateButton({super.key});
@@ -25,16 +26,16 @@ class CalculateButton extends StatelessWidget {
                           children: [
                             Row(
                               children: [
-                                Icon(
-                                  Icons.arrow_back_ios_new_rounded,
-                                  color: Colors.white,
-                                  size: 28,
+                                Icon(Icons.arrow_back_ios_new_rounded,
+                                    color: Colors.white, size: 25),
+                                SizedBox(width: 15),
+                                Text(
+                                  'Сиздин ден соолук индексиниз BMI',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w500),
                                 ),
-                                SizedBox(
-                                  width: 15,
-                                ),
-                                Text('Ден-соолук индекси(BMI)',
-                                    style: AppTextStyles.heightStyle),
                               ],
                             ),
                           ],
@@ -50,7 +51,7 @@ class CalculateButton extends StatelessWidget {
                       Column(
                         children: [
                           const SizedBox(
-                            height: 58,
+                            height: 45,
                           ),
                           Container(
                             width: 500,
@@ -95,7 +96,7 @@ class CalculateButton extends StatelessWidget {
                             ),
                           ),
                           const SizedBox(
-                            height: 6,
+                            height: 10,
                           ),
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
