@@ -27,7 +27,7 @@ final String text1;
               style: AppTextStyles.bodyStyle,
             ),
              Text(
-              text1,
+              text1.toString(),
               style: AppTextStyles.numStyle,
             ),
              Row(

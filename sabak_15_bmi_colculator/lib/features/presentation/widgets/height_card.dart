@@ -3,9 +3,10 @@ import '../constants/app_text_styles.dart';
 
 class HeightCard extends StatelessWidget {
   const HeightCard({
-    super.key, required this.text,
+    super.key, required this.text, required this.widget,
   });
   final String text;
+  final Widget widget;
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +29,7 @@ class HeightCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.baseline,
               children: [
                 Text(
+                  
                   text,
                   style: AppTextStyles.numStyle,
                 ),
@@ -37,8 +39,8 @@ class HeightCard extends StatelessWidget {
             ),
               ],
             ),
-            
-            Slider(min: 0, max: 150, value: 75, onChanged: (value) {}),
+            widget,
+           
           ],
         ),
       ),

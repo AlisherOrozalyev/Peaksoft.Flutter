@@ -3,12 +3,13 @@ import 'package:sabak_15_bmi_colculator/features/presentation/constants/app_text
 
 class MaleFemaleCard extends StatelessWidget {
   const MaleFemaleCard({
-    super.key, required this.text, required this.icon,
+    super.key, required this.text, required this.icon, this.onTap, required this.color,
   });
 
 final String text;
 final IconData icon;
-
+final void Function()? onTap;
+final Color color;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -21,11 +22,14 @@ final IconData icon;
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-             Icon(
-              icon,
-              size: 70,
-              color: Colors.white,
-            ),
+            IconButton (
+              onPressed: onTap,
+               icon: Icon(
+                icon,
+                size: 70,
+                color: color,
+                           ),
+             ),
             Text(
               text.toUpperCase(),
               style: AppTextStyles.bodyStyle,
