@@ -8,15 +8,12 @@ class SearchSettingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(15),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          SvgPicture.asset("assets/svg_images/icon.svg"),
-          SvgPicture.asset("assets/svg_images/Vector.svg"),
-        ],
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        SvgPicture.asset("assets/svg_images/icon.svg"),
+        SvgPicture.asset("assets/svg_images/Vector.svg"),
+      ],
     );
   }
 }
