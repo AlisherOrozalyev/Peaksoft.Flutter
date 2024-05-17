@@ -11,31 +11,30 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 233, 198, 69),
+      backgroundColor: const Color(0xffECB90B),
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 233, 198, 69),
-        title: const Center(
-          child: Text(
-            'Тапшырма 3',
-            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-          ),
-        ),
+        centerTitle: true,
+        backgroundColor: const Color(0xffECB90B),
+        title: const Text('Тапшырма 3'),
         shadowColor: Colors.black,
         elevation: 10,
       ),
-      body:  Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Text(
-            "I'm Rich",
-            style: TextStyle(
-            fontSize: 48,
-             fontWeight: FontWeight.w400
-             
-            ),
-          ),
-          Image.asset('assets/image/almaz.png'),
-        ],
+      body:  Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+             const Text(
+               "I'm Rich",
+               style: TextStyle(
+               fontSize: 48,
+                fontWeight: FontWeight.w400,
+                fontFamily: 'Sofia-Regular'
+                
+               )
+             ),
+            Center(child: Image.asset('assets/images/almaz.png')),
+          ],
+        ),
       ),
     );
   }
