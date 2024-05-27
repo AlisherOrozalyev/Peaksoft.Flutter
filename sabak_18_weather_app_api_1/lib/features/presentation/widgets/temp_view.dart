@@ -1,19 +1,20 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class TemperatureViewWidget extends StatelessWidget {
   const TemperatureViewWidget({
-    super.key, required this.temp,
+    super.key, required this.temp, required this.text, required this.icon,
   });
+  final String text;
   final double temp;
+  final String icon;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        SvgPicture.asset('assets/svg_images/cludy.svg'),
-        const Column(
+        Image.network(icon),
+         Column(
           children: [
             Column(
               children: [
@@ -23,14 +24,14 @@ class TemperatureViewWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '19',
-                      style: TextStyle(
+                    text,
+                      style: const TextStyle(
                         color: Color(0xff303345),
                         fontSize: 74.17,
                         fontWeight: FontWeight.w700,
                       ),
                     ),
-                    Text(
+                    const Text(
                       " \u2103",
                       style: TextStyle(
                         color: Color(0xff303345),
@@ -40,8 +41,8 @@ class TemperatureViewWidget extends StatelessWidget {
                     ),
                   ],
                 ),
-                Padding(
-                  padding: EdgeInsets.all(8.0),
+                const Padding(
+                  padding: EdgeInsets.all(15),
                   child: Text(
                     
                     'Rainy',

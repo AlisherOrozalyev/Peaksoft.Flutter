@@ -1,5 +1,3 @@
-// ignore_for_file: unused_local_variable
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sabak_18_weather_app_api_1/features/data/weather_repo.dart';
@@ -58,10 +56,21 @@ class _WeaterPageState extends State<WeatherPage> {
                               ),
                               TemperatureViewWidget(
                                 temp: snap.data!.temp,
+                                text: temp.toStringAsFixed(0),
+                                icon:
+                                    'https://openweathermap.org/img/wn/${snap.data!.icon}@4x.png',
                               ),
-                              const CardWidget(),
-                              const CardWidget(),
-                              const CardWidget(),
+                               CardWidget(
+                                image: 'assets/svg_images/veter.svg',
+                                text: '${snap.data!.wind} km/h',
+                                text1: 'wind',
+                              ),
+                               CardWidget(
+                                image: 'asets/svg_images/vlaga.svg',
+                                text: '${snap.data!.humidity} %',
+                                text1: 'humidity',
+                              ),
+                              // const CardWidget(),
                               const WheatherDaysWidget(),
                               SliderTheme(
                                 data: SliderTheme.of(context).copyWith(
@@ -131,3 +140,42 @@ class _WeaterPageState extends State<WeatherPage> {
     );
   }
 }
+// class SquareThumbShape extends SliderComponentShape {
+//   final double thumbRadius;
+
+//   SquareThumbShape({this.thumbRadius = 8.0});
+
+//   @override
+//   Size getPreferredSize(bool isEnabled, bool isDiscrete) {
+//     return Size.fromRadius(thumbRadius);
+//   }
+
+//   @override
+//   void paint(
+//     PaintingContext context,
+//     Offset center, {
+//     required Animation<double> activationAnimation,
+//     required Animation<double> enableAnimation,
+//     required bool isDiscrete,
+//     required TextPainter labelPainter,
+//     required RenderBox parentBox,
+//     required SliderThemeData sliderTheme,
+//     required TextDirection textDirection,
+//     required double value,
+//     required double textScaleFactor,
+//     required Size sizeWithOverflow,
+//   }) {
+//     final Paint paint = Paint()
+//       ..color = sliderTheme.thumbColor ?? Colors.blue
+//       ..style = PaintingStyle.fill;
+
+//     final Rect thumbRect = Rect.fromCenter(
+//       center: center,
+//       width: 17.25,
+//       height: 5.17,
+//     );
+
+//     context.canvas.drawRect(thumbRect, paint);
+//   }
+// }
+
