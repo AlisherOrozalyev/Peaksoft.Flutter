@@ -12,7 +12,7 @@ class SearchSettingWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         SvgPicture.asset("assets/svg_images/icon.svg"),
-        SvgPicture.asset("assets/svg_images/Vector.svg"),
+        SvgPicture.asset("assets/svg_images/veter.svg"),
       ],
     );
   }

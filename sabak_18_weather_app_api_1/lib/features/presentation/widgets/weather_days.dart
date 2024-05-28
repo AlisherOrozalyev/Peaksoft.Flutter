@@ -21,7 +21,7 @@ class WheatherDaysWidget extends StatelessWidget {
                       fontSize: 13.8,
                       fontWeight: FontWeight.w700),
                 ),
-                SizedBox(width: 100),
+                SizedBox(width: 70),
                 Text(
                   'Tomorrow',
                   style: TextStyle(
@@ -29,7 +29,7 @@ class WheatherDaysWidget extends StatelessWidget {
                       fontSize: 13,
                       fontWeight: FontWeight.w600),
                 ),
-                SizedBox(width: 70),
+                SizedBox(width: 50),
                 Row(
                   children: [
                     Text(
